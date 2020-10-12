@@ -85,24 +85,25 @@
             font-weight: bold;
         }
 
-        .img1 {
-            background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/8c1a7960-0c59-11eb-9dfb-6da8e309e0d8.jpg);
+        .image {
             height: 600px;
             width: 300px;
             background-size: 100%;
             animation: 20s show infinite;
             position: absolute;
             right: 0;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .img1 {
+            background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/8c1a7960-0c59-11eb-9dfb-6da8e309e0d8.jpg);
+
         }
 
         .img2 {
             background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/96b82d00-0c58-11eb-b997-9918a5dda011.jpg);
-            height: 600px;
-            width: 300px;
-            background-size: 100%;
-            animation: 20s reshow infinite;
-            position: absolute;
-            right: 0;
+
         }
 
         .desc {
@@ -168,8 +169,8 @@
         <section class="contant">
             <div class="place">
                 <div class="tell">
-                    <div class="img1"></div>
-                    <div class="img2"></div>
+                    <div class="image img1"></div>
+                    <div class="image img2"></div>
                 </div>
                 <div class="desc">
                     <div><span class="title">PortWatch 1.0.0</span>&nbsp;<span class="time">发布时间：2020-01-01</span>
