@@ -4,6 +4,21 @@
       <img @click="handle_search" :src="icon" alt="" />
       <input focus type="number" @keyup.enter="handle_search" v-model="port" />
     </div>
+    <div class="commen-list" v-if="common_list">
+      <span
+        @click="handle_check_port(tag, i)"
+        v-for="(tag, i) in common_list"
+        :key="i"
+        class="tag"
+        >{{ tag }}
+        <img
+          class="delete"
+          :src="colse"
+          alt=""
+          @click.stop="handle_delete(i)"
+        />
+      </span>
+    </div>
     <div class="contant">
       <div v-if="!loading">
         <div v-for="(tds, i) in merge_lists.tds" :key="i">
@@ -53,14 +68,17 @@
 <script>
 const exec = window.require("child_process").exec;
 const search_all = "lsof -i";
+const COMMEN_LIST = "0x001";
 export default {
   name: "App",
   data() {
     return {
-      port: 8080,
+      port: "3000",
       list: [],
       icon: require("./assets/search.svg"),
+      colse: require("./assets/close.svg"),
       loading: false,
+      common_list: [],
     };
   },
   computed: {
@@ -119,14 +137,41 @@ export default {
     },
   },
   mounted() {
-    this.handle_all_port(search_all);
+    let common_list = window.localStorage.getItem(COMMEN_LIST) || "[]";
+    this.common_list = JSON.parse(common_list);
+    this.handle_search();
   },
   components: {},
   methods: {
+    handle_check_port(port) {
+      this.port = port;
+      this.handle_search();
+    },
+    handle_delete(i) {
+      this.common_list.splice(i, 1);
+      window.localStorage.setItem(
+        COMMEN_LIST,
+        JSON.stringify(this.common_list)
+      );
+    },
     async_search(command) {
       this.loading = true;
       exec(command, (err, strout) => {
         this.list = strout;
+        if (this.port) {
+          let common_list = window.localStorage.getItem(COMMEN_LIST) || "[]";
+          common_list = JSON.parse(common_list);
+          const isalive = common_list.find((e) => e === this.port);
+          if (!isalive) {
+            window.localStorage.setItem(
+              COMMEN_LIST,
+              JSON.stringify([...common_list, this.port])
+            );
+            common_list = window.localStorage.getItem(COMMEN_LIST) || "[]";
+            common_list = JSON.parse(common_list);
+            this.common_list = common_list;
+          }
+        }
         this.loading = false;
       });
     },
@@ -192,6 +237,31 @@ export default {
   overflow: scroll;
   flex: 1;
   width: 100%;
+}
+.commen-list {
+  padding: 10px;
+  overflow-y: scroll;
+  display: flex;
+}
+.tag:hover .delete {
+  display: inline-block;
+}
+.delete {
+  display: none;
+  height: 15px;
+  width: 15px;
+}
+.tag {
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .row {
   background-color: #fff;
