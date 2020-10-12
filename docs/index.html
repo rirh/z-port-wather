@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PortWather</title>
     <style>
+        :root {
+            --base-color: #666;
+            --lighter-base-color: #999;
+            --face-color: #73989e;
+            --lighter-face-color: #CAE8ED;
+            --border-color: #000000;
+        }
+
         @media (prefers-color-shscheme:dark) {
 
             /* dark css here */
@@ -73,6 +81,7 @@
             margin-top: 2vw;
             position: relative;
             margin-left: 20vw;
+            height: 600px;
         }
 
         .contant .title {
@@ -191,6 +200,148 @@
                 box-shadow: 1px 0 0 0;
             }
         }
+
+        .tips {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* 小人 */
+
+        .body {
+            position: relative;
+            margin: 100px 150px;
+            width: 155px;
+            height: 230px;
+            background-color: var(--base-color);
+
+            border: 12px solid var(--border-color);
+            border-radius: 70px 85px 70px 70px;
+        }
+
+        .body-light-part {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1;
+
+            width: 95%;
+            height: 90%;
+            background-color: var(--lighter-base-color);
+            transform: rotate(-2deg);
+            border-radius: 40% 50% 36% 30%;
+        }
+
+        .face {
+            position: absolute;
+            right: -20px;
+            top: 25px;
+            z-index: 2;
+
+            background-color: var(--face-color);
+            width: 130px;
+            height: 90px;
+            transform: rotate(-4deg);
+
+            border: 12px solid var(--border-color);
+            border-radius: 70px 90px 110px 110px;
+        }
+
+        .face-light-part {
+            position: relative;
+            width: 94px;
+            height: 50px;
+            margin: 0px 12px;
+            background-color: var(--lighter-face-color);
+            border-radius: 30% 40% 55% 50%;
+            display: inline-block;
+        }
+
+        .shimmer {
+            position: relative;
+            margin: 4px 25px;
+            width: 50px;
+            height: 20px;
+            background-color: white;
+            border-radius: 40% 50% 50% 40%;
+        }
+
+        .backpack {
+            position: absolute;
+            left: 0;
+            top: 65px;
+            width: 50px;
+            height: 150px;
+            transform: translate(-100%);
+
+            background-color: var(--base-color);
+            border: 12px solid var(--border-color);
+            border-radius: 40% 0 0 50%;
+        }
+
+        .backpack-light-part {
+            margin-left: 2px;
+            height: 25px;
+            width: calc(100% - 2px);
+
+            background-color: var(--lighter-base-color);
+
+            border-radius: 50% 0 0 20%;
+        }
+
+        .leg-left-under {
+            position: absolute;
+            bottom: 0;
+            left: -12px;
+
+            width: 70px;
+            height: 60px;
+
+            background-color: var(--base-color);
+            border-left: 12px solid var(--border-color);
+        }
+
+
+        .leg-left {
+            position: absolute;
+            bottom: 0;
+            left: -12px;
+            width: 65px;
+            height: 55px;
+            transform: translateY(55px);
+
+            background-color: var(--base-color);
+            border: 12px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 40% 60%;
+        }
+
+        .leg-right-under {
+            position: absolute;
+            bottom: -4px;
+            left: 70px;
+
+            width: 65px;
+            height: 32px;
+
+            background-color: var(--base-color);
+            border-right: 12px solid var(--border-color);
+        }
+
+        .leg-right {
+            position: absolute;
+            bottom: -50px;
+            left: 70px;
+
+            width: 65px;
+            height: 50px;
+
+            background-color: var(--base-color);
+            border: 12px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 40% 60%;
+        }
     </style>
 </head>
 
@@ -215,8 +366,24 @@
                     </a>
                 </div>
             </div>
-
         </section>
+        <div class="tips">
+            <div class="body">
+                <div class="body-light-part"></div>
+                <div class="face">
+                    <div class="face-light-part">
+                        <div class="shimmer"></div>
+                    </div>
+                </div>
+                <div class="backpack">
+                    <div class="backpack-light-part"></div>
+                </div>
+                <div class="leg-left-under"></div>
+                <div class="leg-left"></div>
+                <div class="leg-right-under"></div>
+                <div class="leg-right"></div>
+            </div>
+        </div>
     </div>
 </body>
 <script>
