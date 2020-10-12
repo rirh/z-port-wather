@@ -25,9 +25,9 @@ module.exports = {
                     icon: './public/logo256.ico'
                 },
                 mac: {
-                    icon: './public/logo256.ico'
+                    // icon: './public/logo256.ico'
                 },
-                productName:'Z Git'
+                productName:'PortWather'
             }
         }
     }

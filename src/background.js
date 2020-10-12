@@ -29,7 +29,7 @@ function createWindow() {
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: true,
       webSecurity: false,
-      // icon: `${__static}/logo256.ico`
+      icon: `./assets/logo512.png`
     }
   })
   if (process.env.WEBPACK_DEV_SERVER_URL) {

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortWather</title>
+    <style>
+        @media (prefers-color-shscheme:dark) {
+
+            /* dark css here */
+            html,
+            img,
+            picture,
+            video {
+                filter: invert(1) hue-rotate(180deg);
+            }
+
+            .invert {
+                filter: invert(1) hue-rotate(180deg);
+            }
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 1280px;
+            background-color: #eee;
+        }
+
+        header {
+            display: flex;
+        }
+
+        header .name {
+            font-size: 24px;
+            padding: 20px;
+            margin-left: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .secetion-1 {
+            background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/8934f790-0c57-11eb-b997-9918a5dda011.png);
+            width: 100%;
+            height: 100%;
+            -webkit-background-size: 100% 100%;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+
+        }
+
+        .contant {
+            display: grid;
+            place-items: center;
+
+        }
+
+        .place {
+            display: flex;
+
+        }
+
+        .contant .tell {
+            display: flex;
+            margin-top: 2vw;
+            position: relative;
+            margin-left: 20vw;
+        }
+
+        .contant .title {
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .desc-con {
+            font-size: 52px;
+            font-weight: bold;
+        }
+
+        .img1 {
+            background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/8c1a7960-0c59-11eb-9dfb-6da8e309e0d8.jpg);
+            height: 600px;
+            width: 300px;
+            background-size: 100%;
+            animation: 20s show infinite;
+            position: absolute;
+            right: 0;
+        }
+
+        .img2 {
+            background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/96b82d00-0c58-11eb-b997-9918a5dda011.jpg);
+            height: 600px;
+            width: 300px;
+            background-size: 100%;
+            animation: 20s reshow infinite;
+            position: absolute;
+            right: 0;
+        }
+
+        .desc {
+            margin-top: 10vw;
+            margin-left: 10vw;
+        }
+
+        .download {
+            padding: 10px 20px;
+            font-size: 32px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .download:hover {
+            background-color: #999;
+            color: #fff;
+        }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+                display: none;
+            }
+
+            50% {
+                opacity: 1;
+                display: block;
+            }
+
+            100% {
+                opacity: 0;
+                display: none;
+            }
+        }
+
+        @keyframes reshow {
+            0% {
+                opacity: 1;
+                display: block;
+
+            }
+
+            50% {
+                opacity: 0;
+                display: none;
+            }
+
+            100% {
+                opacity: 1;
+                display: block;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="secetion-1">
+        <header>
+            <span class="name">PortWather</span>
+        </header>
+        <section class="contant">
+            <div class="place">
+                <div class="tell">
+                    <div class="img1"></div>
+                    <div class="img2"></div>
+                </div>
+                <div class="desc">
+                    <div><span class="title">PortWatch 1.0.0</span>&nbsp;<span class="time">发布时间：2020-01-01</span>
+                    </div>
+                    <h3 class="desc-con">大有所为 不止于此</h3>
+                    <a
+                        href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/8d6555c0-0ae1-11eb-b997-9918a5dda011.dmg">
+                        <button class="download">立即下载</button>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</body>
+<script>
+
+</script>
+
+</html>
