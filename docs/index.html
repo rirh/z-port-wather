@@ -159,6 +159,38 @@
 
             }
         }
+
+        .typing {
+            width: 9em;
+            white-space: nowrap;
+            border-right: 2px solid transparent;
+            animation: typing 5s steps(9, end), blink-caret .75s step-end infinite;
+            overflow: hidden;
+        }
+
+        /* 打印效果 */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 9em;
+            }
+        }
+
+        /* 光标闪啊闪 */
+        @keyframes blink-caret {
+
+            from,
+            to {
+                box-shadow: 1px 0 0 0 transparent;
+            }
+
+            50% {
+                box-shadow: 1px 0 0 0;
+            }
+        }
     </style>
 </head>
 
@@ -176,7 +208,7 @@
                 <div class="desc">
                     <div><span class="title">PortWatch 1.0.0</span>&nbsp;<span class="time">发布时间：2020-01-01</span>
                     </div>
-                    <h3 class="desc-con">大有所为 不止于此</h3>
+                    <h3 class="desc-con typing">大有所为，不止于此</h3>
                     <a
                         href="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-crypto2server/cb2bf8f0-0c6c-11eb-8bd0-2998ac5bbf7e.dmg">
                         <button class="download">立即下载</button>
