@@ -42,14 +42,28 @@
 
         header {
             display: flex;
+            justify-content: space-between;
+        }
+
+        header a {
+            text-decoration: none;
+            color: unset;
+            padding: 20px;
         }
 
         header .name {
             font-size: 24px;
-            padding: 20px;
             margin-left: 30px;
             font-weight: 600;
             cursor: pointer;
+        }
+
+        header .sign {
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #444;
         }
 
         .secetion-1 {
@@ -132,6 +146,7 @@
             background-color: #999;
             color: #fff;
         }
+
 
         @keyframes show {
             0% {
@@ -348,7 +363,12 @@
 <body>
     <div class="secetion-1">
         <header>
-            <span class="name">PortWather</span>
+            <a href="https://wchat.github.io/z-port-wather/">
+                <span class="name">PortWather</span>
+            </a>
+            <a href="http://join.huzhihui.org.cn/" target="_blank" rel="noopener noreferrer">
+                <button class="sign">开始使用</button>
+            </a>
         </header>
         <section class="contant">
             <div class="place">
